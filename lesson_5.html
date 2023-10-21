@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Theme</title>
+    <style>
+      button {
+        border-radius: 4px;
+        font-size: 20px;
+      }
+
+      .light-theme-btn {
+        background-color: black;
+        color: white;
+      }
+
+      .dark-theme-btn {
+        border: white;
+        color: black;
+      }
+
+      .dark-theme-background {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="light-theme-btn">Dark Theme</button>
+    <script>
+      function change_btn_to_dark_theme(btn_locator) {
+        btn_locator.classList.remove("light-theme-btn");
+        btn_locator.classList.add("dark-theme-btn");
+      }
+
+      function change_background_to_dark_theme() {
+        let background_locator = document.querySelector("body");
+        background_locator.classList.add("dark-theme-background");
+      }
+
+      function change_to_dark_theme() {
+        let btn_locator = document.querySelector("button");
+        change_btn_to_dark_theme(btn_locator);
+        change_background_to_dark_theme();
+      }
+      let btn_locator = document.querySelector("button");
+      btn_locator.addEventListener("click", change_to_dark_theme);
+    </script>
+  </body>
+</html>
